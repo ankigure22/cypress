@@ -3,6 +3,7 @@ import loginPage from "../pages/loginPage";
 import shoppingPage from "../pages/shoppingPage";
 
 describe('Test to buy Apple phone and validate recipt', () => {
+const path = require("path");
 it('Should buy highest price apple phone from inventory page', () =>{
 
     cy.visit('https://bstackdemo.com/')
@@ -17,7 +18,15 @@ it('Should buy highest price apple phone from inventory page', () =>{
     
 it('Verify the downloaded file', () => {
     const downloadsFolder = Cypress.config("downloadsFolder");
-    const path = require("path");
     cy.readFile(path.join(downloadsFolder, "confirmation.pdf")).should("exist");
+   
       });
+
+ it('delete download folder', () => {
+        
+    cy.task("isFileExist", { fileName: `.${path.sep}downloads${path.sep}confirmation.pdf`}).then(() => {
+    cy.deleteDownloadsFolder()
+    
+        });
+})
 })

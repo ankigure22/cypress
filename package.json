@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cy:run:chrome": "cypress run --browser chrome",
-    "cy:run:firefox": "cypress run --browser firefox",
+    "cy:run:chrome": "cypress run --browser chrome --headed ",
+    "cy:run:firefox": "cypress run --browser firefox --headed ",
     "cypr": "cross-env CYPRESS_REMOTE_DEBUGGING_PORT=9222 cypress open"
   },
   "author": "",
@@ -14,6 +14,7 @@
     "@cypress/xpath": "^2.0.3",
     "cross-env": "^7.0.3",
     "cypress": "^13.3.0",
+    "cypress-delete-downloads-folder": "^0.0.3",
     "cypress-iframe": "^1.0.1"
   }
 }
