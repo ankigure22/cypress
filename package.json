@@ -1,0 +1,19 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox",
+    "cypr": "cross-env CYPRESS_REMOTE_DEBUGGING_PORT=9222 cypress open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/xpath": "^2.0.3",
+    "cross-env": "^7.0.3",
+    "cypress": "^13.3.0",
+    "cypress-iframe": "^1.0.1"
+  }
+}
