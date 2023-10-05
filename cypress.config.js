@@ -2,9 +2,12 @@ const { defineConfig } = require('cypress');
 const { removeDirectory } = require('cypress-delete-downloads-folder');
 const fs = require("fs");
 
+
 module.exports = defineConfig({
   // setupNodeEvents can be defined in either
-  // the e2e or component configuration
+  // the e2e or component configuration'
+  "projectId": "pyv8e8",
+
   e2e: {
     setupNodeEvents(on, config) {
       on('task', {
