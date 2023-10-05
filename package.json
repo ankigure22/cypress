@@ -16,5 +16,8 @@
     "cypress": "^13.3.0",
     "cypress-delete-downloads-folder": "^0.0.3",
     "cypress-iframe": "^1.0.1"
+  },
+  "dependencies": {
+    "cypress-parallel": "^0.13.0"
   }
 }
