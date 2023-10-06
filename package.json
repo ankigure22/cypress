@@ -2,20 +2,22 @@
   "name": "cypress",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "commonjs",
+  "supportFile": "cypress/support/e2e.js",
+  "main": "e2e.js",
   "scripts": {
     "cy:run:chrome": "cypress run --browser chrome --headed ",
     "cy:run:firefox": "cypress run --browser firefox --headed ",
     "cypr": "cross-env CYPRESS_REMOTE_DEBUGGING_PORT=9222 cypress open",
     "cy:record:parallel": "node runner.js cypress run --record --parallel --key {@CYPRESS_RECORD_KEY}",
     "cy:run": "cypress run",
-    "cy:parallel" : "cypress-parallel -s cy:run -t 2 -d cypress/e2e"
-  
+    "cy:parallel": "cypress-parallel -s cy:run -t 2 -d cypress/e2e"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
+    "@types/lodash": "^4.14.199",
     "angular-http-server": "^1.12.0",
     "cross-env": "^7.0.3",
     "cypress": "^13.3.0",

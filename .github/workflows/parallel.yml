@@ -23,8 +23,8 @@ jobs:
         with:
           command: npm run cy:run:firefox
           browser: chrome
-          headless: true
-          record: true
+          
+          record: false
           parallel: true
       - name: Upload Report- Firefox
         uses: actions/upload-artifact@v3
@@ -32,10 +32,7 @@ jobs:
          name: Test-Report-Firefox
          path: cypress/reports/Result
           
-      -  name: Upload merged artifact  
-         uses: actions/download-artifact@v3
-         with:
-           path: cypress/reports/
+      
 
   Chrome-Test:
     strategy:
@@ -52,8 +49,8 @@ jobs:
         with:
           command: npm run cy:run:chrome
           browser: chrome
-          headless: true
-          record: true
+          
+          record: false
           parallel: true
       - name: Upload Report- Chrome
         uses: actions/upload-artifact@v3
@@ -61,10 +58,6 @@ jobs:
             name: Test-Report-Chrome
             path: cypress/reports/Result
             
-      - name: Upload merged artifact  
-        uses: actions/download-artifact@v3
-        with:
-           path: cypress/reports/
+      
            
-      - name : Merger 
-        run: cp cypress/reports/Test-Report-*/* > cypress/reports/merged-report | cat cypress/reports/merged-report/*.html > cypress/reports/finalReport.html    
+      

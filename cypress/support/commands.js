@@ -23,4 +23,18 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
 require('cypress-delete-downloads-folder').addCustomCommand();
+
+Cypress.Commands.add('subValues', (a, b) => { return a - b });
+
+Cypress.Commands.add('clickButton', (buttonId) => {
+    cy.get('button').contains(buttonId).click();
+  });
+
+Cypress.Commands.add("userInput", (searchTxt) => {
+    //to input search text in Google and perform search
+    cy.get("input[type='text']").type(searchTxt);
+    cy.contains("Google Search").click();
+ });
+ 
