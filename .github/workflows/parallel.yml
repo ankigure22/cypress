@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Google-Test
+      - name: e2e
         uses: cypress-io/github-action@v6
         with:
           command: npm run google
@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Google-Test
+      - name: e2e
         uses: cypress-io/github-action@v6
         with:
           command: npm run amazon
