@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Google-Test
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v6
         with:
           command: npm run google
           browser: chrome
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Google-Test
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v6
         with:
           command: npm run amazon
           browser: chrome
