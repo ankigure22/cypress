@@ -6,7 +6,16 @@ name: GitHub Actions Parallel Run
       - master
    
 jobs:
-  Google-Test:
+  Firefox-Test:
+    strategy:
+      matrix:
+       version: [ 10, 12]
+       os: [ ubuntu-latest, windows-latest, macos-latest ]
+    runs-on:  ${{ matrix.os}}
+        steps:
+         - uses: actions/setup-node@v3
+           with:
+            node-version: ${{ matrix.version }}
     timeout-minutes: 120
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +28,7 @@ jobs:
           browser: chrome
           headless: true
           record: false
-  Amazon-Test:
+  Chrome-Test:
     timeout-minutes: 120
     runs-on: ubuntu-latest
     steps:
