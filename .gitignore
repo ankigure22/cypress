@@ -35,3 +35,6 @@ node_modules
 cypress/videos
 cypress/screenshots
 js/*.js
+cypress/support/e2e.js
+cypress/reports/*
+cypress/reports/html/assets/*
