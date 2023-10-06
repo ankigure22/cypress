@@ -38,3 +38,4 @@ js/*.js
 cypress/support/e2e.js
 cypress/reports/*
 cypress/reports/html/assets/*
+runner-results/*

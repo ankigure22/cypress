@@ -7,17 +7,22 @@
     "cy:run:chrome": "cypress run --browser chrome --headed ",
     "cy:run:firefox": "cypress run --browser firefox --headed ",
     "cypr": "cross-env CYPRESS_REMOTE_DEBUGGING_PORT=9222 cypress open",
-    "cy:record:parallel": "node runner.js cypress run --record --parallel --key {@CYPRESS_RECORD_KEY}"
+    "cy:record:parallel": "node runner.js cypress run --record --parallel --key {@CYPRESS_RECORD_KEY}",
+    "cy:run": "cypress run",
+    "cy:parallel" : "cypress-parallel -s cy:run -t 2 -d cypress/e2e"
+  
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
+    "angular-http-server": "^1.12.0",
     "cross-env": "^7.0.3",
     "cypress": "^13.3.0",
     "cypress-delete-downloads-folder": "^0.0.3",
     "cypress-iframe": "^1.0.1",
-    "cypress-mochawesome-reporter": "^3.6.0"
+    "cypress-mochawesome-reporter": "^3.6.0",
+    "npm-run-all": "^4.1.5"
   },
   "dependencies": {
     "cypress-parallel": "^0.13.0"

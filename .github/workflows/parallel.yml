@@ -8,9 +8,11 @@ name: GitHub Actions Parallel Run
 jobs:
   Firefox-Test:
     strategy:
+      fail-fast: false
       matrix:
+       containers: [1, 2, 3] 
        version: [ 10, 12, 14 ]
-       os: [ ubuntu-latest, windows-latest, macos-latest ]
+       os: [ ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 120
     steps:
@@ -22,7 +24,8 @@ jobs:
           command: npm run cy:run:firefox
           browser: chrome
           headless: true
-          record: false
+          record: true
+          parallel: true
       - name: Upload Report- Firefox
         uses: actions/upload-artifact@v3
         with:
@@ -50,7 +53,8 @@ jobs:
           command: npm run cy:run:chrome
           browser: chrome
           headless: true
-          record: false
+          record: true
+          parallel: true
       - name: Upload Report- Chrome
         uses: actions/upload-artifact@v3
         with:
