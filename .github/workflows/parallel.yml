@@ -4,8 +4,7 @@ name: GitHub Actions Parallel Run
   pull_request:
     branches:
       - master
-    schedule:
-      - cron: '* 5 * * *'
+   
 jobs:
   Google-Test:
     timeout-minutes: 120
@@ -16,7 +15,7 @@ jobs:
       - name: e2e
         uses: cypress-io/github-action@v6
         with:
-          command: npm run e2e
+          command: npm run cy:run:firefox
           browser: chrome
           headless: true
           record: false
@@ -29,7 +28,7 @@ jobs:
       - name: e2e
         uses: cypress-io/github-action@v6
         with:
-          command: npm run e2e
+          command: npm run cy:run:chrome
           browser: chrome
           headless: true
           record: false
